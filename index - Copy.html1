@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Sharanya 🥳🎂✨</title>
+  <meta name="description" content="A special birthday page for Sharanya — made with love by Aadya 💛" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#0b0b18;
+      --bg2:#140b2d;
+      --card: rgba(255,255,255,0.08);
+      --card2: rgba(255,255,255,0.12);
+      --text:#ffffff;
+      --muted: rgba(255,255,255,0.75);
+      --accent1:#ff77c8;
+      --accent2:#8be9fd;
+      --accent3:#ffd36e;
+      --shadow: 0 20px 60px rgba(0,0,0,0.55);
+      --radius: 24px;
+    }
+
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    body{
+      font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 20% 10%, #2b1248 0%, transparent 60%),
+                  radial-gradient(1000px 700px at 80% 30%, #123a4a 0%, transparent 55%),
+                  linear-gradient(135deg, var(--bg1), var(--bg2));
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .container{ width:min(1050px, 92vw); margin:0 auto; padding: 36px 0 100px; }
+
+    /* Top floating hearts */
+    .bg-hearts{
+      position:fixed; inset:0; pointer-events:none; opacity:0.22; overflow:hidden;
+    }
+    .heart{
+      position:absolute;
+      width:16px; height:16px;
+      transform: rotate(45deg);
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      border-radius: 3px;
+      animation: floatUp 12s linear infinite;
+      filter: blur(0.2px);
+    }
+    .heart::before, .heart::after{
+      content:"";
+      position:absolute;
+      width:16px; height:16px;
+      background: inherit;
+      border-radius: 50%;
+    }
+    .heart::before{ left:-8px; top:0; }
+    .heart::after{ top:-8px; left:0; }
+    @keyframes floatUp{
+      0%{ transform: translateY(120vh) rotate(45deg) scale(0.9); opacity:0; }
+      10%{ opacity:1; }
+      100%{ transform: translateY(-20vh) rotate(45deg) scale(1.35); opacity:0; }
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      align-items:stretch;
+      margin-top: 18px;
+    }
+    @media(max-width: 880px){
+      .hero{ grid-template-columns:1fr; }
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 200px at 20% 10%, rgba(255,119,200,0.20), transparent 60%),
+                  radial-gradient(400px 200px at 80% 30%, rgba(139,233,253,0.18), transparent 55%);
+      z-index:0;
+    }
+    .card > *{ position:relative; z-index:1; }
+
+    .hero-left{ padding: 28px; }
+    .kicker{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .pill{
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.16);
+      font-weight:600;
+    }
+
+    h1{
+      font-family: Pacifico, cursive;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height:1.08;
+      margin: 6px 0 12px;
+      background: linear-gradient(90deg, #fff, #ffd36e, #ff77c8);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color: transparent;
+    }
+    .sub{
+      color: var(--muted);
+      font-size: 16px;
+      line-height:1.6;
+      max-width: 60ch;
+    }
+
+    .cta-row{
+      display:flex; flex-wrap:wrap;
+      gap:12px;
+      margin-top: 18px;
+      align-items:center;
+    }
+    .btn{
+      border:none; cursor:pointer;
+      padding: 12px 16px;
+      border-radius: 16px;
+      font-weight:700;
+      letter-spacing:0.2px;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      user-select:none;
+      display:flex; gap:10px; align-items:center;
+    }
+    .btn:hover{ transform: translateY(-2px); }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      color:#0b0b18;
+    }
+    .btn.ghost{
+      background: rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.18);
+      color: #fff;
+    }
+    .btn.small{
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-size: 14px;
+    }
+
+    .signature{
+      margin-top: 14px;
+      color: rgba(255,255,255,0.82);
+      font-weight:600;
+    }
+    .signature span{
+      color: var(--accent3);
+    }
+
+    /* Right hero panel */
+    .hero-right{
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .glass{
+      background: var(--card2);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 14px;
+    }
+    .mini-title{
+      font-weight:800;
+      letter-spacing:0.2px;
+      margin-bottom: 8px;
+    }
+    .quote{
+      font-size: 14px;
+      line-height:1.6;
+      color: rgba(255,255,255,0.80);
+    }
+
+    /* Sections */
+    .section{ margin-top: 26px; }
+    .section h2{
+      font-size: 20px;
+      margin-bottom: 12px;
+      letter-spacing:0.2px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media(max-width: 880px){ .grid{ grid-template-columns:1fr; } }
+
+    .tile{
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.16);
+      min-height: 110px;
+    }
+    .tile .t{
+      font-weight:800;
+      margin-bottom:6px;
+    }
+    .tile p{
+      font-size: 14px;
+      color: rgba(255,255,255,0.78);
+      line-height:1.55;
+    }
+
+    /* Timeline */
+    .timeline{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .moment{
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(0,0,0,0.22);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+    .moment .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.14);
+      margin-bottom: 8px;
+    }
+    .moment h3{
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .moment p{
+      color: rgba(255,255,255,0.78);
+      font-size: 14px;
+      line-height:1.6;
+    }
+
+    /* Notes */
+    .notes{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media(max-width: 880px){ .notes{ grid-template-columns:1fr; } }
+
+    textarea, input{
+      width:100%;
+      background: rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.16);
+      color:#fff;
+      border-radius: 16px;
+      padding: 12px 12px;
+      outline:none;
+      font-family: inherit;
+      font-size: 14px;
+    }
+    textarea{ min-height: 120px; resize: vertical; }
+    .note-item{
+      padding: 14px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      margin-bottom: 12px;
+    }
+    .note-item .who{
+      font-weight:800;
+      font-size: 13px;
+      margin-bottom: 6px;
+      color: rgba(255,255,255,0.92);
+    }
+    .note-item .msg{
+      color: rgba(255,255,255,0.78);
+      font-size: 14px;
+      line-height:1.55;
+    }
+
+    /* Modal */
+    .modal{
+      position:fixed; inset:0; display:none;
+      align-items:center; justify-content:center;
+      background: rgba(0,0,0,0.55);
+      padding: 18px;
+      z-index: 50;
+    }
+    .modal.show{ display:flex; }
+    .modal-card{
+      width:min(680px, 94vw);
+      border-radius: 26px;
+      background: rgba(15,10,30,0.92);
+      border: 1px solid rgba(255,255,255,0.20);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .modal-top{
+      padding: 16px 18px;
+      display:flex; justify-content:space-between; align-items:center;
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+    }
+    .close{
+      background: rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.16);
+      color:#fff;
+      padding: 8px 10px;
+      border-radius: 12px;
+      cursor:pointer;
+      font-weight:800;
+    }
+    .modal-body{
+      padding: 18px;
+    }
+    .wish{
+      font-family: Pacifico, cursive;
+      font-size: clamp(20px, 3.2vw, 28px);
+      line-height:1.3;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #fff, #ff77c8, #8be9fd);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color: transparent;
+    }
+    .wish-sub{
+      color: rgba(255,255,255,0.80);
+      line-height:1.7;
+      font-size: 14px;
+    }
+
+    /* Confetti canvas */
+    canvas#confetti{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index: 60;
+      display:none;
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 34px;
+      text-align:center;
+      color: rgba(255,255,255,0.65);
+      font-size: 13px;
+    }
+
+    .tiny{
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+      margin-top: 6px;
+    }
+
+    /* Music toggle */
+    .music-row{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .status-dot{
+      width:10px; height:10px; border-radius:99px;
+      background: rgba(255,255,255,0.30);
+      box-shadow: 0 0 16px rgba(255,255,255,0.25);
+    }
+    .status-dot.on{
+      background: #68ffb4;
+      box-shadow: 0 0 18px rgba(104,255,180,0.55);
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- background hearts -->
+  <div class="bg-hearts" id="bgHearts"></div>
+
+  <!-- Confetti -->
+  <canvas id="confetti"></canvas>
+
+  <div class="container">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="card hero-left">
+        <div class="kicker">
+          <div class="pill">🎀 Special Day</div>
+          <div class="pill">🎂 Birthday Landing Page</div>
+          <div class="pill">🌸 For Sharanya</div>
+        </div>
+
+        <h1>Happy Birthday Sharanya 🥳🎂✨</h1>
+
+        <p class="sub">
+          Heyyy Sharanya 💖<br/>
+          Today isn’t just a date — it’s the day the world got a little brighter because <b>you exist</b>.
+          This page is a tiny way of saying: <b>you’re loved, appreciated, and celebrated</b>… BIG TIME.
+        </p>
+
+        <div class="cta-row">
+          <button class="btn primary" id="confettiBtn">🎉 Start the Birthday Magic</button>
+          <button class="btn ghost" id="wishBtn">✨ Generate a Birthday Wish</button>
+        </div>
+
+        <div class="signature">With lots of love, <span>— Aadya 💛</span></div>
+        <div class="tiny">P.S. This page is 100% made only for YOU.</div>
+      </div>
+
+      <div class="card hero-right">
+        <div class="glass">
+          <div class="mini-title">👑 Princess Energy</div>
+          <div class="quote">
+            “Beauty, efforts for others, and a heart that makes people happy…”
+            <br/>
+            That’s literally <b>Sharanya</b>.
+          </div>
+        </div>
+
+        <div class="glass">
+          <div class="mini-title">🎶 Birthday Music</div>
+          <div class="music-row">
+            <div class="status-dot" id="musicDot"></div>
+            <div style="flex:1">
+              <div style="font-weight:800;">Music:</div>
+              <div class="tiny" id="musicText">Off (tap Play)</div>
+            </div>
+            <button class="btn ghost small" id="musicBtn">▶ Play</button>
+          </div>
+          <div class="tiny">Tip: Add your favourite song later (instructions below).</div>
+        </div>
+
+        <div class="glass">
+          <div class="mini-title">💌 Today’s message</div>
+          <div class="quote">
+            May this year bring you the kind of happiness you give to everyone else — but 10x more.
+            <br/><br/>
+            Also respectfully… <b>you may go to bhad</b> 😭💀 (with love)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT / CARDS -->
+    <div class="section">
+      <h2>🌟 Why you’re special (and always will be)</h2>
+      <div class="grid">
+        <div class="tile">
+          <div class="t">💖 Beauty</div>
+          <p>You carry a princess vibe naturally. Even normal days look special when you’re around.</p>
+        </div>
+        <div class="tile">
+          <div class="t">🤍 Efforts for others</div>
+          <p>You’re the person who shows up for people. Quietly. Fully. Without expecting anything back.</p>
+        </div>
+        <div class="tile">
+          <div class="t">🫶 You make people happy</div>
+          <p>Your presence is comfort. Your voice is energy. Your smile is literally a mood lift.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAV THINGS -->
+    <div class="section">
+      <h2>🎀 Sharanya’s vibe</h2>
+      <div class="grid">
+        <div class="tile">
+          <div class="t">💃 Dancing</div>
+          <p>The world should honestly pay you to dance. Pure joy.</p>
+        </div>
+        <div class="tile">
+          <div class="t">🎤 Singing</div>
+          <p>Your singing + your energy = unbeatable combo. It feels like home.</p>
+        </div>
+        <div class="tile">
+          <div class="t">😌 Comforting others</div>
+          <p>When someone needs support, your heart shows up first.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEMORIES / TIMELINE -->
+    <div class="section">
+      <h2>📸 Our favourite memories</h2>
+      <div class="timeline">
+        <div class="moment">
+          <div class="tag">🏫 School Era</div>
+          <h3>Last bench pe baith ke snaps banana 😭📱</h3>
+          <p>Iconic era. Chaos, laughter, and best-friend vibes on loop.</p>
+        </div>
+
+        <div class="moment">
+          <div class="tag">🏠 Chennai Trip</div>
+          <h3>When you came to my home before Chennai — those 3 days 💛</h3>
+          <p>Felt like time paused and everything became peaceful and warm.</p>
+        </div>
+
+        <div class="moment">
+          <div class="tag">🌙 Random Nights</div>
+          <h3>Random night stays = core memory ✨</h3>
+          <p>Nothing planned, everything perfect. That’s us.</p>
+        </div>
+
+        <div class="moment">
+          <div class="tag">😂 Certified Madness</div>
+          <h3>The time we jumped off society boundary 💀</h3>
+          <p>We don’t talk about it… but we also do. LEGENDARY.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTES -->
+    <div class="section">
+      <h2>💌 Birthday Notes (for Sharanya)</h2>
+      <div class="notes">
+        <div class="card" style="padding:18px;">
+          <div class="mini-title">Write a note for Sharanya ✍️</div>
+          <p class="tiny">This will save in your browser (works even without internet). For online saving, I can upgrade it later.</p>
+          <div style="height:12px"></div>
+
+          <label class="tiny">Your Name</label>
+          <input id="noteName" placeholder="e.g., Aadya" />
+
+          <div style="height:10px"></div>
+          <label class="tiny">Your Message</label>
+          <textarea id="noteMsg" placeholder="Write something sweet, funny, emotional..."></textarea>
+
+          <div style="height:12px"></div>
+          <button class="btn primary" id="addNoteBtn">💝 Add Note</button>
+        </div>
+
+        <div class="card" style="padding:18px;">
+          <div class="mini-title">Notes wall 🌸</div>
+          <div id="notesList" style="margin-top:10px;"></div>
+          <button class="btn ghost small" id="clearNotesBtn" style="margin-top:10px;">🗑 Clear Notes (only on this device)</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Made with love for Sharanya 💖 — from Aadya ✨
+    </footer>
+  </div>
+
+  <!-- WISH MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <div class="modal-top">
+        <div style="font-weight:900;">✨ Birthday Wish Generator</div>
+        <button class="close" id="closeModal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="wish" id="wishText">Happy Birthday Sharanya 🎂✨</div>
+        <div class="wish-sub" id="wishSub">
+          You deserve all the love, laughter and the softest happiest moments this year 💛
+        </div>
+
+        <div style="height:14px"></div>
+        <button class="btn primary" id="newWishBtn">🔁 Generate Another Wish</button>
+        <button class="btn ghost" id="copyWishBtn" style="margin-left:8px;">📋 Copy Wish</button>
+
+        <div class="tiny" id="copyStatus" style="margin-top:10px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUDIO (You can change this later to any song link) -->
+  <audio id="bgMusic" loop>
+    <!-- Royalty-free sample music link -->
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2c4f1fb60a.mp3?filename=happy-birthday-to-you-piano-version-115334.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // ---------- Background hearts ----------
+    const heartsContainer = document.getElementById('bgHearts');
+    const heartCount = 18;
+    for(let i=0;i<heartCount;i++){
+      const h = document.createElement('div');
+      h.className = 'heart';
+      h.style.left = Math.random()*100 + 'vw';
+      h.style.animationDelay = (Math.random()*10) + 's';
+      h.style.animationDuration = (10 + Math.random()*10) + 's';
+      h.style.opacity = (0.15 + Math.random()*0.35).toFixed(2);
+      h.style.transform = `rotate(45deg) scale(${(0.8+Math.random()*1.4).toFixed(2)})`;
+      heartsContainer.appendChild(h);
+    }
+
+    // ---------- Confetti ----------
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+    let confettiPieces = [];
+    let confettiRunning = false;
+
+    function resizeCanvas(){
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function makeConfetti(){
+      confettiPieces = [];
+      const colors = ["#ff77c8","#8be9fd","#ffd36e","#c3ff8f","#ffffff"];
+      for(let i=0;i<200;i++){
+        confettiPieces.push({
+          x: Math.random()*canvas.width,
+          y: -20 - Math.random()*canvas.height,
+          r: 3 + Math.random()*6,
+          s: 1 + Math.random()*3,
+          a: Math.random()*Math.PI*2,
+          c: colors[Math.floor(Math.random()*colors.length)],
+          w: 6 + Math.random()*8,
+          h: 8 + Math.random()*10,
+        });
+      }
+    }
+
+    function animateConfetti(){
+      if(!confettiRunning) return;
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      confettiPieces.forEach(p=>{
+        p.y += p.s*2.2;
+        p.x += Math.sin(p.a + p.y*0.01)*1.4;
+        p.a += 0.03;
+        ctx.save();
+        ctx.translate(p.x,p.y);
+        ctx.rotate(p.a);
+        ctx.fillStyle = p.c;
+        ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+        ctx.restore();
+      });
+      confettiPieces = confettiPieces.filter(p=>p.y < canvas.height + 40);
+      if(confettiPieces.length < 30) {
+        confettiRunning = false;
+        canvas.style.display = "none";
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        return;
+      }
+      requestAnimationFrame(animateConfetti);
+    }
+
+    document.getElementById('confettiBtn').addEventListener('click', ()=>{
+      canvas.style.display = "block";
+      confettiRunning = true;
+      makeConfetti();
+      animateConfetti();
+    });
+
+    // ---------- Wish generator ----------
+    const modal = document.getElementById('modal');
+    const wishBtn = document.getElementById('wishBtn');
+    const closeModal = document.getElementById('closeModal');
+    const newWishBtn = document.getElementById('newWishBtn');
+    const copyWishBtn = document.getElementById('copyWishBtn');
+    const wishText = document.getElementById('wishText');
+    const wishSub = document.getElementById('wishSub');
+    const copyStatus = document.getElementById('copyStatus');
+
+    const wishes = [
+      {
+        title: "Happy Birthday Sharanya 🥳🎂✨",
+        body: "You are beauty, effort, and pure heart in one person 💛 May you always stay this magical and loved."
+      },
+      {
+        title: "Sharanya, you princess 👑💖",
+        body: "May this year give you the same happiness you give everyone else — but 10x more ✨"
+      },
+      {
+        title: "Happy Birthday Sharanya 💃🎶",
+        body: "Keep dancing, keep singing, keep shining — the world is honestly better because of you 🌸"
+      },
+      {
+        title: "To my best friend Sharanya 🤍",
+        body: "No sugarcoating — you're rare. Defensive about friends, loyal as hell, and always real. Love you 💛"
+      },
+      {
+        title: "Happy Birthday Sharanya 😭💖",
+        body: "May your life be full of peace, laughter, and people who protect you the way you protect others."
+      }
+    ];
+
+    function randomWish(){
+      const w = wishes[Math.floor(Math.random()*wishes.length)];
+      wishText.textContent = w.title;
+      wishSub.textContent = w.body;
+      copyStatus.textContent = "";
+    }
+
+    wishBtn.addEventListener('click', ()=>{
+      randomWish();
+      modal.classList.add('show');
+    });
+    closeModal.addEventListener('click', ()=> modal.classList.remove('show'));
+    modal.addEventListener('click', (e)=>{
+      if(e.target === modal) modal.classList.remove('show');
+    });
+    newWishBtn.addEventListener('click', randomWish);
+
+    copyWishBtn.addEventListener('click', async ()=>{
+      const text = wishText.textContent + "\n" + wishSub.textContent;
+      try{
+        await navigator.clipboard.writeText(text);
+        copyStatus.textContent = "✅ Copied! Now paste it to Sharanya 💛";
+      }catch{
+        copyStatus.textContent = "⚠️ Copy failed. Please manually select & copy.";
+      }
+    });
+
+    // ---------- Music ----------
+    const music = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    const musicText = document.getElementById('musicText');
+    const musicDot = document.getElementById('musicDot');
+    let isPlaying = false;
+
+    async function toggleMusic(){
+      try{
+        if(!isPlaying){
+          await music.play();
+          isPlaying = true;
+          musicBtn.textContent = "⏸ Pause";
+          musicText.textContent = "On (birthday vibes ✨)";
+          musicDot.classList.add('on');
+        }else{
+          music.pause();
+          isPlaying = false;
+          musicBtn.textContent = "▶ Play";
+          musicText.textContent = "Off (tap Play)";
+          musicDot.classList.remove('on');
+        }
+      }catch(err){
+        alert("Your browser blocked autoplay. Tap Play again to start music.");
+      }
+    }
+    musicBtn.addEventListener('click', toggleMusic);
+
+    // ---------- Notes (stored locally) ----------
+    const noteName = document.getElementById('noteName');
+    const noteMsg = document.getElementById('noteMsg');
+    const addNoteBtn = document.getElementById('addNoteBtn');
+    const notesList = document.getElementById('notesList');
+    const clearNotesBtn = document.getElementById('clearNotesBtn');
+
+    function loadNotes(){
+      const raw = localStorage.getItem("sharanya_notes");
+      const notes = raw ? JSON.parse(raw) : [];
+      notesList.innerHTML = "";
+      if(notes.length === 0){
+        notesList.innerHTML = `<div class="tiny">No notes yet. Be the first to leave a sweet message 💌</div>`;
+        return;
+      }
+      notes.slice().reverse().forEach(n=>{
+        const div = document.createElement("div");
+        div.className = "note-item";
+        div.innerHTML = `
+          <div class="who">${escapeHtml(n.name || "Anonymous")} ✨</div>
+          <div class="msg">${escapeHtml(n.msg)}</div>
+        `;
+        notesList.appendChild(div);
+      });
+    }
+
+    function saveNote(n){
+      const raw = localStorage.getItem("sharanya_notes");
+      const notes = raw ? JSON.parse(raw) : [];
+      notes.push(n);
+      localStorage.setItem("sharanya_notes", JSON.stringify(notes));
+    }
+
+    function escapeHtml(str){
+      return String(str).replace(/[&<>"']/g, s => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+      }[s]));
+    }
+
+    addNoteBtn.addEventListener('click', ()=>{
+      const name = noteName.value.trim();
+      const msg = noteMsg.value.trim();
+      if(!msg){
+        alert("Write a message first 😊");
+        return;
+      }
+      saveNote({ name, msg, ts: Date.now() });
+      noteMsg.value = "";
+      loadNotes();
+      alert("✅ Note added! Sharanya is going to love this 💛");
+    });
+
+    clearNotesBtn.addEventListener('click', ()=>{
+      const ok = confirm("Clear notes on this device only?");
+      if(ok){
+        localStorage.removeItem("sharanya_notes");
+        loadNotes();
+      }
+    });
+
+    loadNotes();
+  </script>
+</body>
+</html>
